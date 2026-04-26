@@ -35,9 +35,5 @@ jobs:
       - name: Build
         run: uv build
 
-      - name: Publish to GitHub Packages
-        run: |
-          uv publish \
-            --publish-url https://python.pkg.github.com/${{ github.repository }}/ \
-            --username ${{ github.actor }} \
-            --password ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish to PyPI
+        run: uv publish --token ${{ secrets.PYPI_API_TOKEN }}
