@@ -38,6 +38,6 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           uv publish \
-            --publish-url https://python.pkg.github.com/${{ github.repository_owner }}/ \
+            --publish-url https://python.pkg.github.com/${{ github.repository }}/ \
             --username ${{ github.actor }} \
             --password ${{ secrets.GITHUB_TOKEN }}
